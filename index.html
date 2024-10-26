@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diffusion de Matchs de Football</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+    <header>
+        <h1>Matchs de Championnat d'Aujourd'hui</h1>
+    </header>
+
+    <main>
+        <!-- Section de sélection des championnats -->
+        <section id="championnats">
+            <div class="championnat-card" onclick="showMatches('ligue1')">Ligue 1</div>
+            <div class="championnat-card" onclick="showMatches('liga')">La Liga</div>
+            <div class="championnat-card" onclick="showMatches('premierLeague')">Premier League</div>
+            <div class="championnat-card" onclick="showMatches('bundesliga')">Bundesliga</div>
+        </section>
+
+        <!-- Section dynamique pour afficher les matchs du jour -->
+        <section id="match-list" class="matches-category hidden">
+            <h2 id="championship-title">Matchs du Jour</h2>
+            <div id="matches-container">
+                <!-- Les matchs seront affichés ici dynamiquement -->
+            </div>
+        </section>
+
+        <!-- Section pour afficher les détails du match sélectionné -->
+        <section id="selected-match-details" class="match-details hidden">
+            <h2 id="match-title">Détails du Match</h2>
+            <p id="match-time"></p>
+            <p id="match-stadium"></p>
+        </section>
+
+        <!-- Section pour afficher le lecteur vidéo pour le match Real Madrid vs FC Barcelone -->
+        <section id="video-player" class="video-container hidden">
+            <h2>Diffusion en Direct - Real Madrid vs FC Barcelone</h2>
+            <video id="live-stream" controls autoplay width="600">
+                <source src="http://tv.tvprovip.com:25443/live/V5dAX4XZBOGX/FtozYhc1Nb/9211.ts" type="application/x-mpegURL">
+                Votre navigateur ne prend pas en charge la vidéo HTML5.
+            </video>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
