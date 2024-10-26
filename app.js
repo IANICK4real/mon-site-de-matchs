@@ -63,7 +63,6 @@ function showMatchDetails(match) {
         const videoElement = document.getElementById('live-stream');
         const streamURL = "http://tv.tvprovip.com:25443/live/V5dAX4XZBOGX/FtozYhc1Nb/9211.ts";
 
-        // Utiliser hls.js pour forcer la compatibilité
         if (Hls.isSupported()) {
             const hls = new Hls();
             hls.loadSource(streamURL);
